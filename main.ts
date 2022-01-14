@@ -107,7 +107,11 @@ namespace BioBlocks {
     export function name_plate() {
 
     }
-   
+
+
+
+
+
     //% block
     //% group="Timing"
     //% color="#F978A3"
@@ -132,7 +136,11 @@ namespace BioBlocks {
     export function time_constraint() {
 
     }
-   
+
+
+
+
+
     //% block
     //% group="Symbolic manipulation"
     //% color="#F7A4FA"
@@ -169,7 +177,9 @@ namespace BioBlocks {
     export function multiply() {
 
     }
- 
+
+
+
     //% block
     //% group="Disposal"
     export function discard() {
@@ -180,6 +190,7 @@ namespace BioBlocks {
     export function drain() {
 
     }
+
 
     //% block
     //% group="Declaration of resources"
@@ -224,14 +235,64 @@ namespace BioBlocks {
 
     }
 
+
+
+
     //% block
     //% group="Measurement"
+    //% color="#55F786"
     export function measure_fluid() {
 
     }
- 
+    //% block
+    //% group="Measurement"
+    //% color="#55F786"
+    export function measure_solid() {
+
+    }
+    //% block
+    //% group="Measurement"
+    //% color="#55F786"
+    export function measure_prop() {
+
+    }
+    //% block
+    //% group="Measurement"
+    //% color="#55F786"
+    export function add_to_column() {
+
+    }
+    //% block
+    //% group="Measurement"
+    //% color="#55F786"
+    export function add_to_slide() {
+
+    }
+    //% block
+    //% group="Measurement"
+    //% color="#55F786"
+    export function collect_tissue() {
+
+    }
+    //% block
+    //% group="Measurement"
+    //% color="#55F786"
+    export function plate_out() {
+
+    }
+    //% block
+    //% group="Measurement"
+    //% color="#55F786"
+    export function transfer() {
+
+    }
+
+
+
+
     //% block
     //% group="Combination & mixing"
+    //% color="#0033FF"
     export function combine() {
 
     }
@@ -243,17 +304,52 @@ namespace BioBlocks {
 
     }
     
-    //% block
+    //% block="container $container|speed $speed|temperature $temperature|time $time"
     //% group="Centrifugation"
-    export function centrifuge() {
+    //% color="#00C4FF"
+    export function centrifuge(container:string, speed: number, temperature: number,time:number ) {
 
     }
+    //% block
+    //% group="Centrifugation"
+    //% color="#00C4FF"
+    export function centrifuge_pellet() {
+
+    }
+    //% block
+    //% group="Centrifugation"
+    //% color="#00C4FF"
+    export function centrifuge_phases_top() {
+
+    }
+    //% block
+    //% group="Centrifugation"
+    //% color="#00C4FF"
+    export function centrifuge_phases_bottom() {
+
+    }
+    //% block
+    //% group="Centrifugation"
+    //% color="#00C4FF"
+    export function centrifuge_column() {
+
+    }
+    //% block
+    //% group="Centrifugation"
+    //% color="#00C4FF"
+    export function centrifuge_flow_through() {
+
+    }
+
+
+
 
     //% block
     //% group="Detection & analysis"
     export function ce_detect() {
 
     }
- 
-}
 
+
+
+}
