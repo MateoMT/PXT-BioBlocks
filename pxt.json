@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "description": "",
     "dependencies": {
-        "adafruit-grand-central": "*"
+        "adafruit-grand-central-m4-express": "*"
     },
     "files": [
         "README.md",
