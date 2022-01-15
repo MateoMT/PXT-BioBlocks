@@ -1,97 +1,105 @@
-/**
- * Organize your blocks in groups
- */
-
+enum Protocol {
+    //% block="Plasmid_DNA_Extraction"
+    Plasmid_DNA_Extraction,
+    //% block="Separate_DNA"
+    Separate_DNA,
+    //% blocks="Copy_DNA"
+    Copy_DNA
+}
+enum Steps {
+    //% block="Step_1"
+    Step_1,
+    //% block="Step_2"
+    Step_2,
+    //% blocks="Step_3"
+    Step_3
+}
+enum Op_Steps {
+    //% block="Op_Step_1"
+    Op_Step_1,
+    //% block="Op_Step_2"
+    Op_Step_2,
+    //% blocks="Op_Step_3"
+    Op_Step_3
+}
+enum Sub_Steps {
+    //% block="Sub_Step_1"
+    Sub_Step_1,
+    //% block="Sub_Step_2"
+    Sub_Step_2,
+    //% blocks="Sub_Step_3"
+    Sub_Step_3
+}
 //% color="#AA278D"
 //% groups="['Book-keeping instructions', 'Timing','Symbolic manipulation','Disposal','Declaration of resources','Measurement','Combination & mixing','Temperature & storage','Centrifugation','Detection and analysis']"
 namespace BioBlocks {
-    //% block="start_protocol protocol_name= $protocol"
+    //% block="start_protocol %protocol"
     //% group="Book-keeping instructions"
     //% color='#FF8900'
-    export function start_protocol(protocol: string) {
+
+    export function start_protocol(protocol: Protocol) {
+    
+    }
+    //% block="end_protocol $protocol"
+    //% group="Book-keeping instructions"
+    //% color='#FF8900'
+    export function end_protocol(protocol: Protocol) {
+
+    }
+    //% block="step: do $step"
+    //% group="Book-keeping instructions"
+    //% color='#FF8900'
+    export function step(step: Steps) {
+
+    }
+    /**
+     * Marks an optional step in the protocol.
+     */
+    //% block="optional_step: do $optional_step"
+    //% group="Book-keeping instructions"
+    //% color='#FF8900'
+    export function optional_step(optional_step: Op_Steps) {
 
     }
     //% block
     //% group="Book-keeping instructions"
     //% color='#FF8900'
-    export function end_protocol() {
+    export function end_option(optional_step: Op_Steps) {
 
     }
     //% block
     //% group="Book-keeping instructions"
     //% color='#FF8900'
-    export function first_step() {
+    export function sub_step(sub_step:Sub_Steps) {
 
     }
-    //% block
+    //% block="parallel_step of $step"
     //% group="Book-keeping instructions"
     //% color='#FF8900'
-    export function next_step() {
+    export function parallel_step(step:Steps) {
 
     }
-    //% block
+    //% block="comment %comment"
     //% group="Book-keeping instructions"
     //% color='#FF8900'
-    export function optional_step() {
+    export function comment(comment: string) {
 
     }
-    //% block
+    /**
+     *Marks the steps in the protocol that need further clarification for coding with BioCoder.
+    */
+    //% block="to_do %to_do"
     //% group="Book-keeping instructions"
     //% color='#FF8900'
-    export function first_option() {
+    export function to_do(to_do: string) {
 
     }
-    //% block
+    //% block="repeat $repeatstep"
     //% group="Book-keeping instructions"
     //% color='#FF8900'
-    export function next_option() {
+    export function repeat(repeatstep: Steps) {
 
     }
-    //% block
-    //% group="Book-keeping instructions"
-    //% color='#FF8900'
-    export function end_option() {
-
-    }
-    //% block
-    //% group="Book-keeping instructions"
-    //% color='#FF8900'
-    export function first_sub_step() {
-
-    }
-    //% block
-    //% group="Book-keeping instructions"
-    //% color='#FF8900'
-    export function next_sub_step() {
-
-    }
-    //% block
-    //% group="Book-keeping instructions"
-    //% color='#FF8900'
-    export function parallel_step() {
-
-    }
-    //% block
-    //% group="Book-keeping instructions"
-    //% color='#FF8900'
-    export function comment() {
-
-    }
-    //% block
-    //% group="Book-keeping instructions"
-    //% color='#FF8900'
-    export function to_do() {
-
-    }
-    //% block
-    //% group="Book-keeping instructions"
-    //% color='#FF8900'
-    export function repeat() {
-
-    }
-    //% block
-    //% group="Book-keeping instructions"
-    //% color='#FF8900'
     export function name_sample() {
 
     }   
