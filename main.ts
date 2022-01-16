@@ -31,6 +31,17 @@ enum Sub_Steps {
     //% blocks="Sub_Step_3"
     Sub_Step_3
 }
+enum Container {
+    //% block="container_1"
+    container_1,
+    //% block="container_2"
+    container_2,
+    //% block="container_3"
+    container_3,
+    //% block="container_4"
+    container_4,
+}
+
 //% color="#AA278D"
 //% groups="['Book-keeping instructions', 'Timing','Symbolic manipulation','Disposal','Declaration of resources','Measurement','Combination & mixing','Temperature & storage','Centrifugation','Detection and analysis']"
 namespace BioBlocks {
@@ -116,23 +127,22 @@ namespace BioBlocks {
     export function name_plate() {
 
     }
+    //% block="hold $container wait for %duration ms"
+    //% group="Timing"
+    //% duration.shadow=timePicker
+    //% color="#F978A3"
+    //% expandableArgumentMode="toggle"
+    export function wait(container: Container, duration: number) {
 
-
-
-
-
-    //% block
+}
+    //% block="store $container at $tempretature °C until $event"
     //% group="Timing"
     //% color="#F978A3"
-    export function wait() {
+    export function store_until(container: Container, tempretature:number,event:string) {
 
-    }
-    //% block
-    //% group="Timing"
-    //% color="#F978A3"
-    export function store_until() {
+}
 
-    }
+
     //% block
     //% group="Timing"
     //% color="#F978A3"
