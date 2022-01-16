@@ -41,7 +41,32 @@ enum Container {
     //% block="container_4"
     container_4,
 }
-
+enum Event{
+/**"until all the ethanol has evaporated and no fluid is visible in the tube"*/
+    //% block="ETHANOL_EVAP" 	
+    ETHANOL_EVAP,
+/**"until the O.D.600 reaches 0.6".*/
+    //% block="OD"
+    OD,
+/** "until the sample has thawed". */
+    //% block="THAW"
+    THAW
+/** "until cooled". */
+    //% block="COOLED"
+    COOLED, 	
+/** "until the colour develops". */
+    //% block="COLOUR_DEVELOPS"
+    COLOUR_DEVELOPS, 	
+/** "until the precipitate stops sticking to the walls of the tube". */
+    //% block="PPT_STOPS_STICKING" 	
+    PPT_STOPS_STICKING,
+/**"until the pellet dislodges". */
+    //% block="PELLET_DISLODGES"
+    PELLET_DISLODGES, 	
+/**"keep on ice until the sample has thawed"*/
+    //% block="THAW_ICE"
+    THAW_ICE 	
+}
 //% color="#AA278D"
 //% groups="['Book-keeping instructions', 'Timing','Symbolic manipulation','Disposal','Declaration of resources','Measurement','Combination & mixing','Temperature & storage','Centrifugation','Detection and analysis']"
 namespace BioBlocks {
@@ -138,7 +163,7 @@ namespace BioBlocks {
     //% block="store $container at $tempretature °C until $event"
     //% group="Timing"
     //% color="#F978A3"
-    export function store_until(container: Container, tempretature:number,event:string) {
+    export function store_until(container: Container, tempretature:number,event:Event) {
 
 }
 
