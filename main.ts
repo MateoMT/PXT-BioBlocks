@@ -50,7 +50,7 @@ enum Event{
     OD,
 /** "until the sample has thawed". */
     //% block="THAW"
-    THAW
+    THAW,
 /** "until cooled". */
     //% block="COOLED"
     COOLED, 	
