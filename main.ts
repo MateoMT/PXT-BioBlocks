@@ -185,43 +185,49 @@ namespace BioBlocks {
 
 
 
-    //% block
+    //% block="set symbol $symbol 's value is $value, unit is $unit"
     //% group="Symbolic manipulation"
     //% color="#F7A4FA"
-    export function set_value() {
+    export function set_value(symbol:string, value: number, unit: number) {
 
     }
-    //% block
+    /**Sets symbolic volume s1 to be equal to symbolic volume s2. */
+    //% block="assign symbol1 $symbol1, symbol2 $symbol2"
     //% group="Symbolic manipulation"
     //% color="#F7A4FA"
-    export function assign() {
+    export function assign(symbol1: string, symbol2: string) {
 
     }
-    //% block
+    //% block="add $volume 's $name"
     //% group="Symbolic manipulation"
     //% color="#F7A4FA"
-    export function add() {
+    export function add(volume: number, name: string) {
 
     }
-    //% block
+    //% block="add $volume 's $name into $column"
     //% group="Symbolic manipulation"
     //% color="#F7A4FA"
-    export function divede() {
+    export function add2(volume: number, name: string, culume: string) {
 
     }
-    //% block
+    //% block="divede $volume from $symbolic"
     //% group="Symbolic manipulation"
     //% color="#F7A4FA"
-    export function subtract() {
+    export function divede(volume: number, symbolic:string) {
 
     }
-    //% block
+    //% block="subtract $volume from $symbolic"
     //% group="Symbolic manipulation"
     //% color="#F7A4FA"
-    export function multiply() {
+    export function subtract(volume: number, symbolic:string) {
 
     }
+    //% block="muptiply $volume from $symbolic"
+    //% group="Symbolic manipulation"
+    //% color="#F7A4FA"
+    export function multiply(volume: number, symbolic:string) {
 
+    }
 
 
     //% block
