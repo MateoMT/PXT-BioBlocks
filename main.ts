@@ -67,6 +67,84 @@ enum Event{
     //% block="THAW_ICE"
     THAW_ICE 	
 }
+enum Container_type{
+    /**Sterile 1.5-ml microfuge tube */
+    //% block="STERILE_MICROFUGE_TUBE"
+    STERILE_MICROFUGE_TUBE,
+    /** 15ml centrifuge tube*/
+    //%block="CENTRIFUGE_TUBE_15ML"	
+    CENTRIFUGE_TUBE_15ML, 
+    //%block="FLASK "
+    FLASK,
+    /**Centrifuge bottle */
+    //%block="CENTRIFUGE_BOTTLE "
+    CENTRIFUGE_BOTTLE,
+    /** Graduated cylinder*/ 
+    //%block="GRADUATED_CYLINDER"
+    GRADUATED_CYLINDER,
+    /** container that can be placed in a humidified chamber*/	
+    //%block="HUMIDIFIED_CHAMBER "
+    HUMIDIFIED_CHAMBER,
+    /** Reaction tube*/ 
+    //%block="RXN_TUBE "
+    RXN_TUBE,
+    /**Fresh collection tube */
+    //%block="FRESH_COLL_TUBE"
+    FRESH_COLL_TUBE,
+    /**container with liquid nitrogen */ 
+    //%block="LIQUID_NITROGEN"
+    LIQUID_NITROGEN,
+    /** 50ml PLG tube*/ 
+    //%block="PLG"
+    PLG,
+    /** Oakridge tube*/ 
+    //%block="OAKRIDGE"
+    OAKRIDGE, 
+    /** Qiacartridge*/
+    //%block="QIA_CARTRIDGE "
+    QIA_CARTRIDGE,
+    /**Cuvette stored on ice */ 
+    //%block="CUVETTE_ICE "
+    CUVETTE_ICE,
+    /**spectrometry cuvette */ 
+    //%block="SPEC_CUVETTE "
+    SPEC_CUVETTE,
+    /** 96-well stock plate*/
+    //%block="STOCK_PLATE_96 "
+    STOCK_PLATE_96,
+    /** 96-well block*/
+    //%block="WELL_BLOCK_96"
+    WELL_BLOCK_96,
+    /**96-well PCR plate */
+    //%block="PCR_PLATE"
+    PCR_PLATE,
+    /**96-well liquid block*/
+    //%block="LIQUID_BLOCK"
+    LIQUID_BLOCK,
+    /**Cell culture chamber */
+    //%block="CELL_CULT_CHAMBER"
+    CELL_CULT_CHAMBER,
+    /** Eppendorf tube*/
+    //%block="EPPENDORF"
+    EPPENDORF,
+    /** Sterile 2 ml microcentrifuge tube*/    
+    //%block="STERILE_MICROFUGE_TUBE2ML"
+    STERILE_MICROFUGE_TUBE2ML,
+    /** Sterile 0.6-ml tube*/
+    //%block="STERILE_PCR_TUBE "
+    STERILE_PCR_TUBE,
+    /** 50-ml centrifuge tube*/	
+    //%block="CENTRI_TUBE_50ML"
+    CENTRI_TUBE_50ML,
+    /** screw-topped cryo vial*/    
+    //%block="CRYO_VIAL "
+    CRYO_VIAL,
+    /** Screw-cap tube of appropriate volume*/
+    //%block="SCREW_CAP_TUBE"
+    SCREW_CAP_TUBE 	
+}
+
+
 //% color="#AA278D"
 //% groups="['Book-keeping instructions', 'Timing','Symbolic manipulation','Disposal','Declaration of resources','Measurement','Combination & mixing','Temperature & storage','Centrifugation','Detection and analysis']"
 namespace BioBlocks {
@@ -244,49 +322,53 @@ namespace BioBlocks {
     }
 
 
+    //% block="new fluid $name, $volume ml, at $temperature °C, the state  $state"
+    //% group="Declaration of resources"
+    //% color="#9170FC"
+    //% inlineInputMode=inline
+    export function new_fluid(name: string, volume: number, temperature: number,state: string) {
+
+    }
+     //% block="new solid $name,  at $temperature °C, the state  $state"
+    //% group="Declaration of resources"
+    //% color="#9170FC"
+    //% inlineInputMode=inline
+    export function new_solid(name: string,  temperature: number,state: string) {
+
+    }
+   
+    //% block="new $type container to store $fluid, id= $id"
+    //% group="Declaration of resources"
+    //% color="#9170FC"
+    export function new_container(type:Container_type, fluid: string, id:Container) {
+
+    }
+    //% block="new plate $name, the state $state"
+    //% group="Declaration of resources"
+    //% color="#9170FC"
+    export function new_plate(name: string, state:string) {
+
+    }
+    //% block="new slide $name"
+    //% group="Declaration of resources"
+    //% color="#9170FC"
+    export function new_slide(name: string) {
+
+    }
+    /**Used to declare a new parameter (symbolic time) with the given name and definition. */
+    //% block="new symbol $symbol , $definiton"
+    //% group="Declaration of resources"
+    //% color="#9170FC"
+    export function new_symbol(symbol: string, definition: string) {
+
+    }
+    /**Used to declare a new column with the given name. */
     //% block
     //% group="Declaration of resources"
     //% color="#9170FC"
-    export function new_fluid() {
+    export function new_column(name:string) {
 
     }
-    //% block
-    //% group="Declaration of resources"
-    //% color="#9170FC"
-    export function new_solid() {
-
-    }
-    //% block
-    //% group="Declaration of resources"
-    //% color="#9170FC"
-    export function new_container() {
-
-    }
-    //% block
-    //% group="Declaration of resources"
-    //% color="#9170FC"
-    export function new_plate() {
-
-    }
-    //% block
-    //% group="Declaration of resources"
-    //% color="#9170FC"
-    export function new_slide() {
-
-    }
-    //% block
-    //% group="Declaration of resources"
-    //% color="#9170FC"
-    export function new_symbol() {
-
-    }
-    //% block
-    //% group="Declaration of resources"
-    //% color="#9170FC"
-    export function new_column() {
-
-    }
-
 
 
 
