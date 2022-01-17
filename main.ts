@@ -230,14 +230,16 @@ namespace BioBlocks {
     }
 
 
-    //% block
+    /**Discards the contents of the specified container. */
+    //% block="discard $container"
     //% group="Disposal"
-    export function discard() {
+    export function discard(container: Container) {
 
     }
-    //% block
+    /**Drains the specified container. */
+    //% block="drain $container"
     //% group="Disposal"
-    export function drain() {
+    export function drain(container: Container) {
 
     }
 
