@@ -151,6 +151,56 @@ enum Container_type{
     //%block="SCREW_CAP_TUBE"
     SCREW_CAP_TUBE 	
 }
+enum Func{
+    /**Specifies the kind of operation performed by a given instruction. */
+    /**dewaxing */
+    //%block="DEWAX"
+    DEWAX,
+    /**denaturation */
+    //%block="DENATURE"
+    DENATURE,
+    /**enzyme inactivation */
+    //%block="ENZYME_INAC"
+    ENZYME_INAC,
+}
+enum Mixing{
+    /**Typex of mixing */
+    //%block="Tapping"
+    Tapping,
+    //%block="Stirring"
+    Stirring,
+    //%block="Inverting"
+    Inverting,
+    //%block="Vortexing"
+    Vortexing,
+    //%block="Resuspending"
+    Resuspending,
+    //%block="Dissolving"
+    Dissolving,
+    //%block="Pipetting"
+    Pipetteing,  
+
+}
+
+enum Drying{
+    /**Specifies whether drying has to be performed in air or in vacuum. */
+    //%block="IN_AIR "
+    IN_AIR,  
+    //%block="IN_VACUUM"
+    IN_VACUUM,    
+}
+enum PCR_type{
+    /**Specifies the type of PCR being performed. For use in thermocycler(). */
+    /** Regular PCR */
+    //%block="NORMAL "
+    NORMAL,  
+    /**Gradient PCR */
+    //%block="GRADIENT"
+    GRADIENT ,
+    /** Colony PCR */
+    //%block="COLONY"
+    COLONY, 
+}
 
 
 //% color="#AA278D"
@@ -429,12 +479,39 @@ namespace BioBlocks {
 
     }
     
+    
+    
 
-    //% block
+    //% block="incubate $container at $temperature during $time with shaking at $rpm RPM"
     //% group="Temperature & storage"
-    export function incubate() {
+    //%color="#02598B"
+    export function incubate(container:Container, temperature:number, time: number,rpm:number) {
 
     }
+    /**Stores the specified container at a given temperature and given duration of time. Combination of set_temp() and wait(). */
+    //% block="store $container at $temperature °C during $time to do $fun"
+    //% group="Temperature & storage"
+    //%color="#02598B"
+    //% inlineInputMode=inline
+    export function store_for(container:Container,temperature: number,time:number,fun:Func) {
+
+    }
+    //% block="set the contents of $container 's temperature at $temperature °C "
+    //% group="Temperature & storage"
+    //%color="#02598B"
+    export function set_temp(container:Container,temperature: number) {
+
+    }
+    /**Stores the specified plate at a given temperature. */
+    //% block="store $plate at temperature $temperature °C "
+    //% group="Temperature & storage"
+    //%color="#02598B"
+    export function store_plate(plate:string, temperature: number) {
+
+    }
+    
+    
+    
     
     //% block="container $container|speed $speed|temperature $temperature|time $time"
     //% group="Centrifugation"
