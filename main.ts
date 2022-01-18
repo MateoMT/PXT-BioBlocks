@@ -40,6 +40,14 @@ enum Container {
     container_3,
     //% block="container_4"
     container_4,
+    //% block="container_5"
+    container_5,
+    //% block="container_6"
+    container_6,
+    //% block="container_7"
+    container_7,
+    //% block="container_8"
+    container_8,
 }
 enum Event{
 /**"until all the ethanol has evaporated and no fluid is visible in the tube"*/
@@ -372,52 +380,42 @@ namespace BioBlocks {
 
 
 
-    //% block
+    //% block="measure $volume 's  $name"
     //% group="Measurement"
     //% color="#55F786"
-    export function measure_fluid() {
+    export function measure(volume: number, name: string) {
 
     }
-    //% block
+    //% block="measure out $volume 's  $name into $container"
     //% group="Measurement"
     //% color="#55F786"
-    export function measure_solid() {
+    export function measure_put(volume:number, name: string,container:Container) {
 
     }
-    //% block
+
+    //% block="add $weight 's $name into $column"
     //% group="Measurement"
     //% color="#55F786"
-    export function measure_prop() {
+    export function add_to_column(weight: number,name: string,column:string) {
 
     }
-    //% block
+
+    //% block="collect $weight 's tissue  $tissue into $container"
     //% group="Measurement"
     //% color="#55F786"
-    export function add_to_column() {
+    export function collect_tissue(weight: number,tissue:string,container:Container) {
 
     }
-    //% block
+    //% block="plate out $volume from $container onto $id plate"
     //% group="Measurement"
     //% color="#55F786"
-    export function add_to_slide() {
+    export function plate_out(volume: number, container:Container,id:number ) {
 
     }
-    //% block
+    //% block="transfer the contents of $container1 to $container2"
     //% group="Measurement"
     //% color="#55F786"
-    export function collect_tissue() {
-
-    }
-    //% block
-    //% group="Measurement"
-    //% color="#55F786"
-    export function plate_out() {
-
-    }
-    //% block
-    //% group="Measurement"
-    //% color="#55F786"
-    export function transfer() {
+    export function transfer(container1:Container,container2:Container) {
 
     }
 
