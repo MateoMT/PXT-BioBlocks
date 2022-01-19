@@ -485,6 +485,7 @@ namespace BioBlocks {
     //% block="incubate $container at $temperature during $time with shaking at $rpm RPM"
     //% group="Temperature & storage"
     //%color="#02598B"
+    //% inlineInputMode=inline
     export function incubate(container:Container, temperature:number, time: number,rpm:number) {
 
     }
@@ -507,6 +508,80 @@ namespace BioBlocks {
     //% group="Temperature & storage"
     //%color="#02598B"
     export function store_plate(plate:string, temperature: number) {
+
+    }
+
+
+
+    /**Programs the thermocycler with the appropriate values for number of cycles, 
+     * temperature of denaturation, time of denaturation, temperature of annealing, time of annealing, temperature of elongation, time of elongation, 
+     * type of PCR and gradient temperature (for gradient PCR) and sends the contents of the specified container for thermocycling. 
+     */
+
+    //% block="put master_mix $container in PCR ($pcr_type type) run $cycle cycles: temp1 $temp1  during $time1; temp2 $temp2  during $time2; temp3 $temp3  during $time3;||  grad_temp is $grad_temp"
+    //% group="Temperature & storage"
+    //%color="#02598B"
+    //% inlineInputMode=inline
+    export function thermocycler(container:Container,pcr_type:PCR_type,cycle: number,temp1:number,time1:number,temp2:number,time2:number,temp3:number,time3:number,grad_temp:number) {
+
+    }
+    /**Programs the thermocycler with the appropriate values for annealing the primers with the template according to the specified gradient and sends the contents of the specified container for thermocycling. */
+    //% block="annel $container at temperature $temperature during $time at gradient $gradient"
+    //% group="Temperature & storage"
+    //%color="#02598B"
+    //% inlineInputMode=inline
+    export function thermocycler_anneal(container:Container,temperature: number, time: number, gradient: number) {
+
+    }
+    /**Performs initial denaturation of the contents of the given container in a thermocycler. */
+    //% block="denature the content in $container at temperature $temperature during $time"
+    //% group="Temperature & storage"
+    //%color="#02598B"
+    export function pcr_init_denat(container: Container, temperature:number, time:number) {
+
+    }
+    /**Performs final extension of the contents of the given container in a thermocycler. */
+    //% block="elongate the temperature of $container at $temp_ext during $time_ext;halt reaction at $temp_halt during $time_halt;hold at $temp_hold until removed from machine"
+    //% group="Temperature & storage"
+    //%color="#02598B"
+    //% inlineInputMode=inline
+    export function pcr_final_ext(container:Container,temp_ext:number,time_ext:number,temp_halt:number,time_halt:number,temp_hold:number) {
+
+    }
+    /**Inoculates a medium in the given container with a specified solid colony of culture and performs incubation at the given temperature for the specified duration on a rotary incubator. */
+    //% block="use sample $sample for inoculating medium $medium, then incubate at temperature $temp during $time, shaking $shaking (yes or no)"
+    //% group="Temperature & storage"
+    //%color="#02598B"
+    //% inlineInputMode=inline
+    export function inoculation(sample: string,medium:string,temp:number,time:number,shaing:string) {
+
+    }
+    /**Incubates the given plate at the specified temperature for the specified duration of time. */
+    //% block="incubate plate $plate at temperature $temp during $time"
+    //% group="Temperature & storage"
+    //%color="#02598B"
+    export function incubate_plate(plate: string,temp:number,time:number) {
+
+    }
+    /**Inverts the container containing a pellet to dry it. */
+    //% block="dry the contents of $container at temperature $temp"
+    //% group="Temperature & storage"
+    //%color="#02598B"
+    export function invert_dry(container:Container,temp:number) {
+
+    }
+    /**Dries the contents(pellet) of the specified container with specified conditions and time. */
+    //% block="dry $container at condition $dry_type during $time"
+    //% group="Temperature & storage"
+    //%color="#02598B"
+    export function dry_pellet(container:Container, dry_type:Drying,time:number) {
+
+    }
+    /**Dries the specified slide in air. */
+    //% block="dry slide $slide in air"
+    //% group="Temperature & storage"
+    //%color="#02598B"
+    export function dry_slide(slide:string) {
 
     }
     
