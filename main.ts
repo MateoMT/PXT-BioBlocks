@@ -588,42 +588,51 @@ namespace BioBlocks {
     
     
     
-    //% block="container $container|speed $speed|temperature $temperature|time $time"
+    //% block="put container $container in the centrifuge, run at speed $speed, temperature $temperature, during $time"
     //% group="Centrifugation"
     //% color="#00C4FF"
-    export function centrifuge(container:string, speed: number, temperature: number,time:number ) {
+    //% inlineInputMode=inline
+    export function centrifuge(container:Container, speed: number, temperature: number,time:number ) {
 
     }
-    //% block
+    /**Performs centrifugation of given container at the specified temperature, speed and time and yields a pellet. The expected volume of supernatant is specified and the supernatant is discarded. */
+    //% block="after the centrifugation, specify expected volume $volume"
     //% group="Centrifugation"
     //% color="#00C4FF"
-    export function centrifuge_pellet() {
+    //% inlineInputMode=inline
+    export function centrifuge_pellet(volume: number ) {
 
     }
-    //% block
+    /**The specified proportion of top(aqueous) phase is transferred to a new container and the bottom layer is discarded. */
+    //% block="after the centrifugation, transfer $volume proportion of top(aqueous) phase to $container, discard the bottom layer "
     //% group="Centrifugation"
     //% color="#00C4FF"
-    export function centrifuge_phases_top() {
+    export function centrifuge_phases_top(volume:number,container: Container) {
 
     }
-    //% block
+    /**The specified volume of top(aqueous) phase is discarded and the remaining portion is left behind in the container. */
+    //% block="after the centrifugation, discard $aspirate_vol of top phase, $leave_behind of remaining portion is left"
     //% group="Centrifugation"
     //% color="#00C4FF"
-    export function centrifuge_phases_bottom() {
+    export function centrifuge_phases_bottom(aspirate_vol:number,leave_behind: number) {
 
     }
-    //% block
+    /**Performs centrifugation of given column at the specified temperature and for the specified duration of time. The flow-through is discarded. */
+    //% block="put column $column in the centrifuge, run at speed $speed, temperature $temperature, during $time"
     //% group="Centrifugation"
     //% color="#00C4FF"
-    export function centrifuge_column() {
+    //% inlineInputMode=inline
+    export function centrifuge_column(column:string, speed: number, temperature: number,time:number) {
 
     }
-    //% block
+    /**The column is discarded and the flow-through is left in the collection tube, container1. */
+    //% block="after the centrifugation, given columnis is discarded and collect the flow-through into $container"
     //% group="Centrifugation"
     //% color="#00C4FF"
-    export function centrifuge_flow_through() {
+    export function centrifuge_flow_through(container:Container) {
 
     }
+
 
 
 
