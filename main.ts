@@ -562,6 +562,7 @@ namespace BioBlocks {
     //% block="immerse slide $slide in sample $sample for $time mins,$times times"
     //% group="Combination & mixing"
     //% color="#0033FF"
+    //% inlineInputMode=inline
     export function immerse_slide(slide:string,sample:string,time:number,times:number) {
 
     }
