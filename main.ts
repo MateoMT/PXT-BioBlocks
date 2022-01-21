@@ -201,6 +201,18 @@ enum PCR_type{
     //%block="COLONY"
     COLONY, 
 }
+enum Wash_type{
+    //%block="Wash"
+    WASH,  
+    //%block="Rinse"
+    RINSE,  
+}
+enum Choice{
+    //%block="with"
+    WITH,  
+    //%block="without"
+    WITHOUT,  
+}
 
 
 //% color="#AA278D"
@@ -472,10 +484,111 @@ namespace BioBlocks {
 
 
 
-    //% block
+    //% block="combine contents in $container1 and $container2"
+    /**it can be improved according to the given number */
     //% group="Combination & mixing"
     //% color="#0033FF"
-    export function combine() {
+    export function combine(container1:Container,container2:Container) {
+
+    }
+    //% block="combine contents in $container1 and $container2 by mixing type $mix during $time"
+    //% group="Combination & mixing"
+    //% color="#0033FF"
+    //% inlineInputMode=inline
+    export function combine_and_mix(container1:Container,container2:Container,mix:Mixing,time:number) {
+
+    }
+    //% block="dissolves the contents of $container in tube"
+    //% group="Combination & mixing"
+    //% color="#0033FF"
+    export function dissolve(container:Container) {
+
+    }
+    //% block="close the tube tightly and gently mix the contents in $container by inverting the tube $min - $max times."
+    //% group="Combination & mixing"
+    //% color="#0033FF"
+    export function invert(container:Container,min:number, max:number ) {
+
+    }
+    //% block="mix solution in $container by pipetting up and down several times."
+    //% group="Combination & mixing"
+    //% color="#0033FF"
+    export function pipet(container:Container) {
+
+    }
+    //% block="resuspend the contents in $container by vortexing/shaking vigorously."
+    //% group="Combination & mixing"
+    //% color="#0033FF"
+    export function resuspend(container:Container) {
+
+    }
+    //% block="gently tap the mixture in $container for $time secs."
+    //% group="Combination & mixing"
+    //% color="#0033FF"
+    export function tap(container:Container,time:number) {
+
+    }
+    //% block="vortex the mixture in $container for $time min."
+    //% group="Combination & mixing"
+    //% color="#0033FF"
+    export function vortex(container:Container,time:number) {
+
+    }
+    //% block="vortex column $column gently."
+    //% group="Combination & mixing"
+    //% color="#0033FF"
+    export function vortex_column(column:string) {
+
+    }
+    //% block="incubate $container at $temp for $time hrs with shaking at $shake rpm, mixing gently by stirring the container every $stir_time mins"
+    //% group="Combination & mixing"
+    //% color="#0033FF"
+    //% inlineInputMode=inline
+    export function incubate_and_mix(container:Container,temp:number,time:number,shake:number,stir_time:number) {
+
+    }
+    //% block="prints a table with the given fluid array as the column elements and the given tubes (reaction names) as the row elements"
+    //% group="Combination & mixing"
+    //% color="#0033FF"
+    export function mixing_table() {
+
+    }
+    //% block="prints a table with the given fluid array, initial concentration and final concentration values as parameters of the columns and their corresponding values as row values"
+    //% group="Combination & mixing"
+    //% color="#0033FF"
+    export function mixing_table_pcr() {
+
+    }
+    //% block="immerse slide $slide in sample $sample for $time mins,$times times"
+    //% group="Combination & mixing"
+    //% color="#0033FF"
+    export function immerse_slide(slide:string,sample:string,time:number,times:number) {
+
+    }
+    //% block="take out slide $slide1 from solutiona $fluid1"
+    //% group="Combination & mixing"
+    //% color="#0033FF"
+    export function remove_slide(slide1:string,fluid1:string) {
+
+    }
+    //% block="$type_w slide $slides in fluid $sample, $times for $time secs each."
+    //% group="Combination & mixing"
+    //% color="#0033FF"
+    //% inlineInputMode=inline
+    export function wash_slide(type_w:Wash_type,sample:string,times:number,time:number) {
+
+    }
+    //% block="homogenize the contents of $container in fluid $solution"
+    //% group="Combination & mixing"
+    //% color="#0033FF"
+    export function homogenize_tissue(container:Container,solution:string) {
+
+    }
+    //% block="$wash tissue $tissue in fluid $sample, $times times each for $time secs at temperature $temp $wi shaking"
+    //% group="Combination & mixing"
+    //% color="#0033FF"
+    //% inlineInputMode=inline
+    export function wash_tissue(wash:Wash_type,tissue:string,sample:string,times:number,time:number,temp:number,wi:Choice) {
 
     }
     
