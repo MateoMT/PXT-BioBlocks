@@ -635,11 +635,73 @@ namespace BioBlocks {
 
 
 
-
-
-    //% block
+    /**Sends the contents of the given container to a capillary electrophoresis(CE) unit for separation/detection at the given settings. */
+    //% block="send the contents of $container to a capillary electrophoresis(CE) unit : length $length,voltage $volt_per_cm,separation buffer $fluid during $time"
     //% group="Detection & analysis"
-    export function ce_detect() {
+    //% color="#02732B"
+    //% inlineInputMode=inline
+    export function ce_detect(container:Container,length:number, volt_per_cm:number, fluid:string, time: number) {
+
+    }   
+    /**Performs agarose gel elecrophoresis of the contents of container1. */   
+    //% block="choose containers $containers, load $no_samples samples onto the gel($volume) , concentration of agarose $agar_conc , volume of loading buffer $loading_vol"
+    //% group="Detection & analysis"
+    //% color="#02732B"
+    //% inlineInputMode=inline
+    export function electrophoresis(containers:Container,no_samples:number,volume:string,agar_conc:number,loading_vol:number) {
+
+    }
+    /**Peforms fluorescence activated cell sorting (FACS) of the contents of container1. */
+    //% block="peforms fluorescence activated cell sorting (FACS) of the contents of $container1"
+    //% group="Detection & analysis"
+    //% color="#02732B"
+    export function facs(container1:Container) {
+
+    }
+    //% block="measures the fluorescence of the contents of $container"
+    //% group="Detection & analysis"
+    //% color="#02732B"
+    export function measure_fluorescence(container:Container) {
+
+    }
+    /**Prompts the used to mount the specified slide using the given liquid and to view it under the given device. */
+    //% block="put sample $sample on slide $slide, observe it by device $device"
+    //% group="Detection & analysis"
+    //% color="#02732B"
+    export function mount_observe_slide(sample:string,slide:string,device:string) {
+
+    }
+    //% block="dilute contents in $container to appropriate concentration and sequence it"
+    //% group="Detection & analysis"
+    //% color="#02732B"
+    export function sequencing(container:Container) {
+
+    }
+    //% block="electroporate the contents of $container at voltage $voltage, pulses $pulse times"
+    //% group="Detection & analysis"
+    //% color="#02732B"
+    export function electroporate(container:Container,voltage:number,pulse:number) {
+
+    }
+    //% block="weigh the amount of $container"
+    //% group="Detection & analysis"
+    //% color="#02732B"
+    export function weigh(container:Container) {
+
+    }
+    /**Performs cell culture of the cells present in the given container with the specified parameters. */
+    //% block="culture cells in $container with medium $medium at conditions:|| speed of centrifugation:$centri_speed,temperature:$temp,time $time,percent of carbon dioxide $percent_co2,fuild to wash the valves $valves,fuild to wash chamber $chamber,fuild for trypsinization $tryp, time between feeds $feed"
+    //% group="Detection & analysis"
+    //% color="#02732B"
+    //% inlineInputMode=inline
+    export function cell_culture(container:Container,medium:string,centri_speed:number,temp:number,time:number,percent_co2:number,valves:number,chamber:number,tryp:number,feed:number ) {
+
+    } 
+    /**Transfects the cells contained in container1 with DNA. */   
+    //% block="use DNA $dna to transfect cells in $container by medium $medium"
+    //% group="Detection & analysis"
+    //% color="#02732B"
+    export function transfection(dna:string,container:Container,medium:string) {
 
     }
 
