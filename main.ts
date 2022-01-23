@@ -341,6 +341,7 @@ namespace BioBlocks {
     //% block="new plate: $plate (state:$state)"
     //% group="Book-keeping instructions"
     //% color='#FF8900'
+    //% weight=82
     export function name_plate(plate:string,state:string) {
 
     }
