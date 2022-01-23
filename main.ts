@@ -190,35 +190,35 @@ namespace BioBlocks {
     //% color='#C1B504'
     //% weight=200
     export function protocol(protocol:string):string{
-        
+        return protocol;
     } 
     //% block="%step=variables_get(step 1:name)"
     //% group="Definition"
     //% color='#C1B504'
     //% weight=199
     export function step(step:string):string{
-        
+        return step;
     } 
     //% block="%container=variables_get(container_name)"
     //% group="Definition"
     //% color='#C1B504'
     //% weight=198
     export function container(container:string):string{
-        
+        return container;
     } 
     //% block="%name=variables_get(new a name)"
     //% group="Definition"
     //% color='#C1B504'
     //% weight=197
     export function new_name(name:string):string{
-        
+        return name;
     } 
     //% block="%name=variables_get(plate_name)"
     //% group="Definition"
     //% color='#C1B504'
     //% weight=196
     export function new_a_plate(name:string):string{
-        
+        return name;
     } 
 
 
