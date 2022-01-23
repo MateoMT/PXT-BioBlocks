@@ -203,7 +203,7 @@ namespace BioBlocks {
     //% group="Definition"
     //% color='#C1B504'
     //% weight=198
-    export function new_container(container:string):string{
+    export function container(container:string):string{
         
     } 
     //% block="%name=variables_get(new a name)"
@@ -217,7 +217,7 @@ namespace BioBlocks {
     //% group="Definition"
     //% color='#C1B504'
     //% weight=196
-    export function new_plate(name:string):string{
+    export function new_a_plate(name:string):string{
         
     } 
 
