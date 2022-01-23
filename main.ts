@@ -1,36 +1,3 @@
-
-enum Protocol {
-    //% block="Plasmid_DNA_Extraction"
-    Plasmid_DNA_Extraction,
-    //% block="Separate_DNA"
-    Separate_DNA,
-    //% blocks="Copy_DNA"
-    Copy_DNA
-}
-enum Steps {
-    //% block="Step_1"
-    Step_1,
-    //% block="Step_2"
-    Step_2,
-    //% blocks="Step_3"
-    Step_3
-}
-enum Op_Steps {
-    //% block="Op_Step_1"
-    Op_Step_1,
-    //% block="Op_Step_2"
-    Op_Step_2,
-    //% blocks="Op_Step_3"
-    Op_Step_3
-}
-enum Sub_Steps {
-    //% block="Sub_Step_1"
-    Sub_Step_1,
-    //% block="Sub_Step_2"
-    Sub_Step_2,
-    //% blocks="Sub_Step_3"
-    Sub_Step_3
-}
 enum Container {
     //% block="container_1"
     container_1,
@@ -218,88 +185,167 @@ enum Choice{
 //% color="#AA278D"
 //% groups="['Book-keeping instructions', 'Timing','Symbolic manipulation','Disposal','Declaration of resources','Measurement','Combination & mixing','Temperature & storage','Centrifugation','Detection and analysis']"
 namespace BioBlocks {
-    //% block="start_protocol %protocol"
+    //% block="%protocol=variables_get(protocol_name)"
+    //% group="Definition"
+    //% color='#C1B504'
+    //% weight=200
+    export function protocol(protocol:string):string{
+        
+    } 
+    //% block="%step=variables_get(step 1:name)"
+    //% group="Definition"
+    //% color='#C1B504'
+    //% weight=199
+    export function step(step:string):string{
+        
+    } 
+    //% block="%container=variables_get(container_name)"
+    //% group="Definition"
+    //% color='#C1B504'
+    //% weight=198
+    export function new_container(container:string):string{
+        
+    } 
+    //% block="%name=variables_get(new a name)"
+    //% group="Definition"
+    //% color='#C1B504'
+    //% weight=197
+    export function new_name(name:string):string{
+        
+    } 
+    //% block="%name=variables_get(plate_name)"
+    //% group="Definition"
+    //% color='#C1B504'
+    //% weight=196
+    export function new_plate(name:string):string{
+        
+    } 
+
+
+
+
+    //% block="new protocol %protocol and start:"
     //% group="Book-keeping instructions"
     //% color='#FF8900'
-
-    export function start_protocol(protocol: Protocol) {
+    //% weight=98
+    export function start_protocol(protocol: string) {
     
     }
-    //% block="end_protocol $protocol"
+    //% block="end protocol $protocol"
     //% group="Book-keeping instructions"
     //% color='#FF8900'
-    export function end_protocol(protocol: Protocol) {
+    //% weight=97
+    export function end_protocol(protocol: string) {
 
     }
-    //% block="step: do $step"
+    //% block="first step: $step"
     //% group="Book-keeping instructions"
     //% color='#FF8900'
-    export function step(step: Steps) {
+    //% weight=96
+    export function first_step(step: string) {
 
     }
-    /**
-     * Marks an optional step in the protocol.
-     */
-    //% block="optional_step: do $optional_step"
+    //% block="next step: $step"
     //% group="Book-keeping instructions"
     //% color='#FF8900'
-    export function optional_step(optional_step: Op_Steps) {
+    //% weight=95
+    export function next_step(step: string) {
 
     }
-    //% block
+    /** Marks an optional step in the protocol. */
+    //% block="optional step: $optional_step"
     //% group="Book-keeping instructions"
     //% color='#FF8900'
-    export function end_option(optional_step: Op_Steps) {
+    //% weight=94
+    export function optional_step(optional_step: string) {
 
     }
-    //% block
+    //% block="first optional step: $optional_step"
     //% group="Book-keeping instructions"
     //% color='#FF8900'
-    export function sub_step(sub_step:Sub_Steps) {
+    //% weight=93
+    export function first_option(optional_step: string) {
 
     }
-    //% block="parallel_step of $step"
+    //% block="next optional step: $optional_step"
     //% group="Book-keeping instructions"
     //% color='#FF8900'
-    export function parallel_step(step:Steps) {
+    //% weight=92
+    export function next_option(optional_step: string) {
 
     }
-    //% block="comment %comment"
+    //% block="end the optional step"
     //% group="Book-keeping instructions"
     //% color='#FF8900'
+    //% weight=91
+    export function end_option() {
+
+    }
+    //% block="first sub-step: $sub_step_name"
+    //% group="Book-keeping instructions"
+    //% color='#FF8900'
+    //% weight=90
+    export function first_sub_step(sub_step_name:string) {
+
+    }
+    //% block="next sub-step: $sub_step_name"
+    //% group="Book-keeping instructions"
+    //% color='#FF8900'
+    //% weight=89
+    export function next_sub_step(sub_step_name:string) {
+
+    }
+    //% block="meanwhile, parallel step: $step"
+    //% group="Book-keeping instructions"
+    //% color='#FF8900'
+    //% weight=88
+    export function parallel_step(step:string) {
+
+    }
+    //% block="comment: %comment"
+    //% group="Book-keeping instructions"
+    //% color='#FF8900'
+    //% weight=87
     export function comment(comment: string) {
 
     }
-    /**
-     *Marks the steps in the protocol that need further clarification for coding with BioCoder.
-    */
-    //% block="to_do %to_do"
+    /** Marks the steps in the protocol that need further clarification for coding with BioCoder. */
+    //% block="step needs further clarification: %to_do"
     //% group="Book-keeping instructions"
     //% color='#FF8900'
+    //% weight=86
     export function to_do(to_do: string) {
 
     }
-    //% block="repeat $repeatstep"
+    //% block="repeat step: $repeatstep"
     //% group="Book-keeping instructions"
     //% color='#FF8900'
-    export function repeat(repeatstep: Steps) {
+    //% weight=85
+    export function repeat(repeatstep: string) {
 
     }
-    export function name_sample() {
+    //% block="the name of container $container 's contents is set to $new_name"
+    //% group="Book-keeping instructions"
+    //% color='#FF8900'
+    //% weight=84
+    export function name_sample(container:string,new_name:string) {
 
     }   
-    //% block
+    //% block="label container $container with the given name $name"
     //% group="Book-keeping instructions"
     //% color='#FF8900'
-    export function name_container() {
+    //% weight=83
+    export function name_container(container:string,name:string) {
 
     }
-    //% block
+    //% block="new plate: $plate (state:$state)"
     //% group="Book-keeping instructions"
     //% color='#FF8900'
-    export function name_plate() {
+    export function name_plate(plate:string,state:string) {
 
     }
+    
+    
     //% block="hold $container wait for %duration ms"
     //% group="Timing"
     //% duration.shadow=timePicker
