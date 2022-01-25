@@ -180,6 +180,44 @@ enum Choice{
     //%block="without"
     WITHOUT,  
 }
+enum Time_unit{
+    //%block="secs"
+    Seconds,  
+    //%block="mins"
+    Minutes,
+    //%block="hrs"
+    Hours,  
+}
+enum Speed_type{
+    //%block="RPM"
+    RPM,  
+    //%block="G"
+    G,  
+}
+enum Weight_unit{
+    //%block="UG"
+    Microgram,  
+    //%block="MG"
+    Milligram,
+    //%block="GR"
+    Gram,     
+}
+enum Vol_unit{
+    //%block="UL"
+    Microliter,  
+    //%block="ML"
+    Milliliter,
+    //%block="L"
+    Liter,     
+}
+enum Time_constraint_type{
+    //%block="Current_fluid"
+    Applicable_to_the_subsequent_use_of_the_contents_of_a_particular_container,  
+    //%block="Nextstep"
+    Applicable_between_a_pair_of_successive_steps_that_use_the_contents_of_a_container,  
+}
+
+
 
 
 //% color="#AA278D"
@@ -347,32 +385,37 @@ namespace BioBlocks {
     }
     
     
-    //% block="hold $container wait for %duration ms"
+
+
+    //% block="keep container $container aside for %duration %time_unit"
     //% group="Timing"
-    //% duration.shadow=timePicker
     //% color="#F978A3"
-    //% expandableArgumentMode="toggle"
-    export function wait(container: Container, duration: number) {
+    //% weight=100
+    export function wait(container: string, duration: number, time_unit:Time_unit) {
 
 }
-    //% block="store $container at $tempretature °C until $event"
+    //% block="store $container at $tempretature °C until $event (~$min_time-$max_time $time_unit)"
     //% group="Timing"
     //% color="#F978A3"
-    export function store_until(container: Container, tempretature:number,event:Event) {
+    //% inlineInputMode=inline
+    //% weight=99
+    export function store_until(container: string, tempretature:number,event:Event,min_time:number,max_time:number,time_unit:Time_unit) {
 
 }
-
-
-    //% block
+    //% block="note: If $container is used within $time $time_unit,||set temperature to $temp_use °C and use, else store it at $temp_store °C"
     //% group="Timing"
     //% color="#F978A3"
-    export function use_or_store() {
+    //% inlineInputMode=inline
+    //% weight=98
+    export function use_or_store(container:string,time:number,time_unit:Time_unit,temp_use:number,temp_store:number) {
 
     }
-    //% block
+    //% block="note: for container $container, proceed to $c_type within $time $time_unit"
     //% group="Timing"
     //% color="#F978A3"
-    export function time_constraint() {
+    //% inlineInputMode=inline
+    //% weight=97
+    export function time_constraint(container:string,c_type:Time_constraint_type,time:number,time_unit:Time_unit) {
 
     }
 
