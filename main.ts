@@ -423,61 +423,74 @@ namespace BioBlocks {
 
 
 
-    //% block="set symbol $symbol 's value is $value, unit is $unit"
+    //% block="symbol $symbol1 's value is set to $value and unit is $unit"
     //% group="Symbolic manipulation"
-    //% color="#F7A4FA"
-    export function set_value(symbol:string, value: number, unit: number) {
+    //% color="#009c6a"
+    //% weight=100
+    /**here a class should be created and used */
+    export function set_time_value (symbol1:string, value: number, unit: Time_unit){
+
+    }
+    //% block="symbol $symbol1 's value is set to $value and unit is $unit"
+    //% group="Symbolic manipulation"
+    //% color="#009c6a"
+    //% weight=99
+    export function set_vol_value(symbol1:string, value: number, unit: Vol_unit) {
 
     }
     /**Sets symbolic volume s1 to be equal to symbolic volume s2. */
-    //% block="assign symbol1 $symbol1, symbol2 $symbol2"
+    //% block="let  symbol$symbol1 's value=$symbol2's"
     //% group="Symbolic manipulation"
-    //% color="#F7A4FA"
+    //% color="#009c6a"
+    //% weight=98
     export function assign(symbol1: string, symbol2: string) {
+        symbol1=symbol2;
+    }
+    //% block="symbol $symbol1 's value is assigned the value $volume1 + $volume2"
+    //% group="Symbolic manipulation"
+    //% color="#009c6a"
+    //% weight=97
+    export function add(symbol1: string,volume1: string, volume2: string) {
+        
+    }
+ 
+    //% block="symbol $symbol1 's value is assigned the value $volume1 / $volume2"
+    //% group="Symbolic manipulation"
+    //% color="#009c6a"
+    //% weight=96
+    export function divede(symbol1:string,volume1: number, volume2:string) {
 
     }
-    //% block="add $volume 's $name"
+    //% block="symbol $symbol1 's value is assigned the value $volume1 - $volume2"
     //% group="Symbolic manipulation"
-    //% color="#F7A4FA"
-    export function add(volume: number, name: string) {
+    //% color="#009c6a"
+    //% weight=95
+    export function subtract(symbol1:string,volume1: number, volume2:string) {
 
     }
-    //% block="add $volume 's $name into $column"
+    //% block="symbol $symbol1 's value is assigned the value $volume1 * $volume2"
     //% group="Symbolic manipulation"
-    //% color="#F7A4FA"
-    export function add2(volume: number, name: string, culume: string) {
-
-    }
-    //% block="divede $volume from $symbolic"
-    //% group="Symbolic manipulation"
-    //% color="#F7A4FA"
-    export function divede(volume: number, symbolic:string) {
-
-    }
-    //% block="subtract $volume from $symbolic"
-    //% group="Symbolic manipulation"
-    //% color="#F7A4FA"
-    export function subtract(volume: number, symbolic:string) {
-
-    }
-    //% block="muptiply $volume from $symbolic"
-    //% group="Symbolic manipulation"
-    //% color="#F7A4FA"
-    export function multiply(volume: number, symbolic:string) {
+    //% color="#009c6a"
+    //% weight=94
+    export function multiply(symbol1:string,volume1: number, volume2:string) {
 
     }
 
 
     /**Discards the contents of the specified container. */
-    //% block="discard $container"
+    //% block="discard the container $container"
     //% group="Disposal"
-    export function discard(container: Container) {
+    //% color="#AA278D"
+    //% weight=93
+    export function discard(container: string) {
 
     }
     /**Drains the specified container. */
-    //% block="drain $container"
+    //% block="drain the container $container"
     //% group="Disposal"
-    export function drain(container: Container) {
+    //% color="#AA278D"
+    //% weight=92
+    export function drain(container: string) {
 
     }
 
