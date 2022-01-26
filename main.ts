@@ -495,55 +495,60 @@ namespace BioBlocks {
     }
 
 
-    //% block="new fluid $name, $volume ml, at $temperature °C, the state  $state"
+    //% block="new fluid:$volume $unit $name at $temperature °C(the state $state)"
     //% group="Declaration of resources"
     //% color="#9170FC"
     //% inlineInputMode=inline
-    export function new_fluid(name: string, volume: number, temperature: number,state: string) {
+    //% weight=100
+    export function new_fluid( volume: number,unit:Vol_unit, name: string,temperature: number,state: string) {
 
     }
-     //% block="new solid $name,  at $temperature °C, the state  $state"
+     //% block="new solid $name at $temperature °C(the state  $state)"
     //% group="Declaration of resources"
     //% color="#9170FC"
     //% inlineInputMode=inline
+    //% weight=99
     export function new_solid(name: string,  temperature: number,state: string) {
 
     }
    
-    //% block="new $type container to store $fluid, id= $id"
+    //% block="new $type1 container $name and $fluid as contents"
     //% group="Declaration of resources"
     //% color="#9170FC"
-    export function new_container(type:Container_type, fluid: string, id:Container) {
+    //% weight=98
+    export function new_container(type1:Container_type, name:string,fluid: string) {
 
     }
-    //% block="new plate $name, the state $state"
+    //% block="new plate $name (the state $state)"
     //% group="Declaration of resources"
     //% color="#9170FC"
+    //% weight=97
     export function new_plate(name: string, state:string) {
 
     }
     //% block="new slide $name"
     //% group="Declaration of resources"
     //% color="#9170FC"
+    //% weight=96
     export function new_slide(name: string) {
 
     }
     /**Used to declare a new parameter (symbolic time) with the given name and definition. */
-    //% block="new symbol $symbol , $definiton"
+    //% block="new symbol $symbol1 - $definition"
     //% group="Declaration of resources"
     //% color="#9170FC"
-    export function new_symbol(symbol: string, definition: string) {
+    //% weight=95
+    export function new_symbol (symbol1: string, definition: string){
 
     }
     /**Used to declare a new column with the given name. */
-    //% block
+    //% block="new column $name"
     //% group="Declaration of resources"
     //% color="#9170FC"
+    //% weight=94
     export function new_column(name:string) {
 
     }
-
-
 
     //% block="measure $volume 's  $name"
     //% group="Measurement"
