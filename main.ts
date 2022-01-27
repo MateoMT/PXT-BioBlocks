@@ -550,42 +550,75 @@ namespace BioBlocks {
 
     }
 
-    //% block="measure $volume 's  $name"
+    //% block="measure out $volume $unit of $name from $container into container $tube1"
     //% group="Measurement"
-    //% color="#55F786"
-    export function measure(volume: number, name: string) {
+    //% color="BC9000"
+    //% inlineInputMode=inline
+    //% weight=100
+    export function measure_fluid(volume: number,unit:Vol_unit, name: string,container:string,tube1:string) {
 
     }
-    //% block="measure out $volume 's  $name into $container"
+    //% block="measure out $volume $unit of $name"
     //% group="Measurement"
-    //% color="#55F786"
-    export function measure_put(volume:number, name: string,container:Container) {
+    //% color="BC9000"
+    //% weight=99
+    export function measure_fluid_out(volume:number,unit:Vol_unit, name: string) {
 
     }
-
-    //% block="add $weight 's $name into $column"
+    //% block="measure out $weight $unit of $name into container $container"
     //% group="Measurement"
-    //% color="#55F786"
-    export function add_to_column(weight: number,name: string,column:string) {
+    //% color="BC9000"
+    //% inlineInputMode=inline
+    //% weight=98
+    export function measure_solid(weight: number,unit:Weight_unit, name: string,container:string) {
 
     }
-
-    //% block="collect $weight 's tissue  $tissue into $container"
+    //% block="add $prop volumes of $source into $desk"
     //% group="Measurement"
-    //% color="#55F786"
-    export function collect_tissue(weight: number,tissue:string,container:Container) {
-
-    }
-    //% block="plate out $volume from $container onto $id plate"
-    //% group="Measurement"
-    //% color="#55F786"
-    export function plate_out(volume: number, container:Container,id:number ) {
+    //% color="BC9000"
+    //% inlineInputMode=inline
+    //% weight=97
+    export function measure_prop(prop: number, source: string,desk:string) {
 
     }
-    //% block="transfer the contents of $container1 to $container2"
+    //% block="add $volume1 $unit of $fluid to column $column1"
     //% group="Measurement"
-    //% color="#55F786"
-    export function transfer(container1:Container,container2:Container) {
+    //% color="BC9000"
+    //% inlineInputMode=inline
+    //% weight=96
+    export function add_to_column(volume1: number,unit:Vol_unit,fluid: string,column1:string) {
+
+    }
+    //% block="add $volume1 $unit of $sample to each of the slide $slide1"
+    //% group="Measurement"
+    //% color="BC9000"
+    //% inlineInputMode=inline
+    //% weight=95
+    export function add_to_slide(volume1: number,unit:Vol_unit,sample: string,slide1:string) {
+
+    }
+    //% block="collect $weight $unit of tissue $tissue in container $container"
+    //% group="Measurement"
+    //% color="BC9000"
+    //% inlineInputMode=inline
+    //% weight=94
+    export function collect_tissue(weight: number,unit:Weight_unit, tissue:string,container:string) {
+
+    }
+    //% block="plate out $volume1 $unit of contents in $container1 onto plate $plate1"
+    //% group="Measurement"
+    //% color="BC9000"
+    //% inlineInputMode=inline
+    //% weight=93
+    export function plate_out(volume: number,unit:Vol_unit,container1:string,plate1:number ) {
+
+    }
+    //% block="transfer the contents of $container1 into another container $container2"
+    //% group="Measurement"
+    //% color="BC9000"
+    //% inlineInputMode=inline
+    //% weight=92
+    export function transfer(container1:string,container2:string) {
 
     }
 
