@@ -625,112 +625,139 @@ namespace BioBlocks {
 
 
 
-    //% block="combine contents in $container1 and $container2"
+    //% block="combine containers $container1 and $container2"
     /**it can be improved according to the given number */
     //% group="Combination & mixing"
     //% color="#0033FF"
-    export function combine(container1:Container,container2:Container) {
+    //% weight=100
+    export function combine(container1:string,container2:string) {
 
     }
-    //% block="combine contents in $container1 and $container2 by mixing type $mix during $time"
+    //% block="combine containers $container1 and $container2 by $mix during $min-$max $unit"
     //% group="Combination & mixing"
     //% color="#0033FF"
     //% inlineInputMode=inline
-    export function combine_and_mix(container1:Container,container2:Container,mix:Mixing,time:number) {
+    //% weight=99
+    export function combine_and_mix(container1:string,container2:string,mix:Mixing,min:number,max:number,unit:Time_unit) {
 
     }
-    //% block="dissolves the contents of $container in tube"
+    //% block="dissolve the pellet in the solution of container $container"
     //% group="Combination & mixing"
     //% color="#0033FF"
-    export function dissolve(container:Container) {
+    //% inlineInputMode=inline
+    //% weight=98
+    export function dissolve(container:string) {
 
     }
-    //% block="close the tube tightly and gently mix the contents in $container by inverting the tube $min - $max times."
+    //% block="close container $container tightly and gently mix the contents until $event1"
     //% group="Combination & mixing"
     //% color="#0033FF"
-    export function invert(container:Container,min:number, max:number ) {
+    //% inlineInputMode=inline
+    //% weight=97
+    export function invert(container:string,event1:Event ) {
 
     }
-    //% block="mix solution in $container by pipetting up and down several times."
+    //% block="close container $container tightly and gently mix the contents by inverting the tube $min-$max times"
     //% group="Combination & mixing"
     //% color="#0033FF"
-    export function pipet(container:Container) {
+    //% inlineInputMode=inline
+    //% weight=96
+    export function invert2(container:string,min:number, max:number ) {
 
     }
-    //% block="resuspend the contents in $container by vortexing/shaking vigorously."
+    //% block="mix solution in container $container by pipetting up and down several times"
     //% group="Combination & mixing"
     //% color="#0033FF"
-    export function resuspend(container:Container) {
+    //% weight=95
+    export function pipet(container:string) {
 
     }
-    //% block="gently tap the mixture in $container for $time secs."
+    //% block="resuspend the contents in container $container by vortexing/shaking vigorously"
     //% group="Combination & mixing"
     //% color="#0033FF"
-    export function tap(container:Container,time:number) {
+    //% weight=94
+    export function resuspend(container:string) {
 
     }
-    //% block="vortex the mixture in $container for $time min."
+    //% block="gently tap the mixture in $container for a few secs until $event1"
     //% group="Combination & mixing"
     //% color="#0033FF"
-    export function vortex(container:Container,time:number) {
+    //% weight=93
+    export function tap(container:string,event:Event) {
 
     }
-    //% block="vortex column $column gently."
+    //% block="vortex the mixture in container $container for $time $unit"
     //% group="Combination & mixing"
     //% color="#0033FF"
+    //% weight=92
+    export function vortex(container:Container,time:number,unit:Time_unit) {
+
+    }
+    //% block="vortex column $column gently"
+    //% group="Combination & mixing"
+    //% color="#0033FF"
+    //% weight=91
     export function vortex_column(column:string) {
 
     }
-    //% block="incubate $container at $temp for $time hrs with shaking at $shake rpm, mixing gently by stirring the container every $stir_time mins"
+    //% block="incubate $container at $temp °C for $time $unit1 ||with shaking at $shake $unit2 mixing gently by $type1 every $stir_time $unit3"
     //% group="Combination & mixing"
     //% color="#0033FF"
     //% inlineInputMode=inline
-    export function incubate_and_mix(container:Container,temp:number,time:number,shake:number,stir_time:number) {
+    //% weight=90
+    export function incubate_and_mix(container:string,temp:number,time:number,unit1:Time_unit,shake:number,unit2:Speed_type,type1:Mixing, stir_time:number,unit3:Time_unit) {
 
     }
-    //% block="prints a table with the given fluid array as the column elements and the given tubes (reaction names) as the row elements"
+    //% block="print a table with the given fluid array as the column elements ||and the given tubes (reaction names) as the row elements"
     //% group="Combination & mixing"
     //% color="#0033FF"
+    //% weight=89
     export function mixing_table() {
 
     }
-    //% block="prints a table with the given fluid array, initial concentration and final concentration values as parameters of the columns and their corresponding values as row values"
+    //% block="print a table with the given fluid array, initial concentration ||and final concentration values as parameters of the columns and their corresponding values as row values"
     //% group="Combination & mixing"
     //% color="#0033FF"
+    //% weight=88
     export function mixing_table_pcr() {
 
     }
-    //% block="immerse slide $slide in sample $sample for $time mins,$times times"
+    //% block="$function1 slide $slide in sample $sample for $time $unit $times times"
     //% group="Combination & mixing"
     //% color="#0033FF"
     //% inlineInputMode=inline
-    export function immerse_slide(slide:string,sample:string,time:number,times:number) {
+    //% weight=87
+    export function immerse_slide(function1:Func, slide:string,sample:string,time:number,unit:Time_unit,times:number) {
 
     }
-    //% block="take out slide $slide1 from solutiona $fluid1"
+    //% block="take out slide $slide1 from fluid $fluid1"
     //% group="Combination & mixing"
     //% color="#0033FF"
+    //% weight=86
     export function remove_slide(slide1:string,fluid1:string) {
 
     }
-    //% block="$type_w slide $slides in fluid $sample, $times for $time secs each."
+    //% block="$type_w slide $slides in fluid $sample $times times for $time $unit each"
     //% group="Combination & mixing"
     //% color="#0033FF"
     //% inlineInputMode=inline
-    export function wash_slide(type_w:Wash_type,sample:string,times:number,time:number) {
+    //% weight=85
+    export function wash_slide(type_w:Wash_type,sample:string,times:number,time:number,unit:Time_unit) {
 
     }
     //% block="homogenize the contents of $container in fluid $solution"
     //% group="Combination & mixing"
     //% color="#0033FF"
-    export function homogenize_tissue(container:Container,solution:string) {
+    //% weight=84
+    export function homogenize_tissue(container:string,solution:string) {
 
     }
-    //% block="$wash tissue $tissue in fluid $sample, $times times each for $time secs at temperature $temp $wi shaking"
+    //% block="$wash tissue $tissue in fluid $sample $times times ||each for $time $unit at temperature $temp $wi shaking"
     //% group="Combination & mixing"
     //% color="#0033FF"
     //% inlineInputMode=inline
-    export function wash_tissue(wash:Wash_type,tissue:string,sample:string,times:number,time:number,temp:number,wi:Choice) {
+    //% weight=83
+    export function wash_tissue(wash:Wash_type,tissue:string,sample:string,times:number,time:number,unit:Time_unit,temp:number,wi:Choice) {
 
     }
     
