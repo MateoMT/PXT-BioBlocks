@@ -764,105 +764,137 @@ namespace BioBlocks {
     
     
 
-    //% block="incubate $container at $temperature during $time with shaking at $rpm RPM"
+    //% block="incubate container $container at $temperature °C during $time $unit1 ||$choice shaking at $rpm $unit2"
     //% group="Temperature & storage"
     //%color="#02598B"
     //% inlineInputMode=inline
-    export function incubate(container:Container, temperature:number, time: number,rpm:number) {
+    //% weight=100
+    export function incubate(container:string, temperature:number, time: number,unit1:Time_unit,choice:Choice,rpm:number,unit2:Speed_type) {
 
     }
     /**Stores the specified container at a given temperature and given duration of time. Combination of set_temp() and wait(). */
-    //% block="store $container at $temperature °C during $time to do $fun"
+    //% block="perform $fun by storing container $contaienr at $temp °C for $time $unit"
     //% group="Temperature & storage"
     //%color="#02598B"
     //% inlineInputMode=inline
-    export function store_for(container:Container,temperature: number,time:number,fun:Func) {
+    //% weight=99
+    export function store_for(fun:Func,container:string,temp: number,time:number,unit:Time_unit) {
 
     }
-    //% block="set the contents of $container 's temperature at $temperature °C "
+    //% block="store container $container at $temp °C for $time $unit"
     //% group="Temperature & storage"
     //%color="#02598B"
-    export function set_temp(container:Container,temperature: number) {
+    //% inlineInputMode=inline
+    //% weight=98
+    export function store_f(container:string,temp: number,time:number,unit:Time_unit) {
+
+    }
+    //% block="set temperature of container $container to $temperature °C "
+    //% group="Temperature & storage"
+    //%color="#02598B"
+    //% weight=97
+    export function set_temp(container:string,temperature: number) {
 
     }
     /**Stores the specified plate at a given temperature. */
-    //% block="store $plate at temperature $temperature °C "
+    //% block="store plate $plate at temperature $temperature °C "
     //% group="Temperature & storage"
     //%color="#02598B"
+    //% weight=96
     export function store_plate(plate:string, temperature: number) {
 
     }
-
-
 
     /**Programs the thermocycler with the appropriate values for number of cycles, 
      * temperature of denaturation, time of denaturation, temperature of annealing, time of annealing, temperature of elongation, time of elongation, 
      * type of PCR and gradient temperature (for gradient PCR) and sends the contents of the specified container for thermocycling. 
      */
 
-    //% block="put master_mix $container in PCR ($pcr_type type) run $cycle cycles: temp1 $temp1  during $time1; temp2 $temp2  during $time2; temp3 $temp3  during $time3;||  grad_temp is $grad_temp"
+    //% block="put container $container in PCR and run $cycle cycles:||denature at $temp1 °C $time1 $unit1;anneal from $temp2 to $temp_grad °C($pcr_type) $time2 $unit2;elongate at $temp3 °C $time3 $unit3"
     //% group="Temperature & storage"
     //%color="#02598B"
     //% inlineInputMode=inline
-    export function thermocycler(container:Container,pcr_type:PCR_type,cycle: number,temp1:number,time1:number,temp2:number,time2:number,temp3:number,time3:number,grad_temp:number) {
+    //% weight=95
+    export function thermocycler(container:string,cycle: number,temp1:number,time1:number,unit1:Time_unit,temp2:number,temp_grad:number,pcr_type:PCR_type,time2:number,unit2:Time_unit,temp3:number,time3:number,unit3:Time_unit,) {
 
     }
     /**Programs the thermocycler with the appropriate values for annealing the primers with the template according to the specified gradient and sends the contents of the specified container for thermocycling. */
-    //% block="annel $container at temperature $temperature during $time at gradient $gradient"
+    //% block="cool container $container to $temperature at the rate of  $gradient every $time $unit"
     //% group="Temperature & storage"
     //%color="#02598B"
     //% inlineInputMode=inline
-    export function thermocycler_anneal(container:Container,temperature: number, time: number, gradient: number) {
+    //% weight=94
+    export function thermocycler_anneal(container:string,temperature: number, gradient: number,time: number,unit:Time_unit ) {
 
     }
     /**Performs initial denaturation of the contents of the given container in a thermocycler. */
-    //% block="denature the content in $container at temperature $temperature during $time"
+    //% block="put container $container in PCR to do inital denature at $temperature °C during $time $unit"
     //% group="Temperature & storage"
     //%color="#02598B"
-    export function pcr_init_denat(container: Container, temperature:number, time:number) {
+    //% inlineInputMode=inline
+    //% weight=93
+    export function pcr_init_denat(container: string, temperature:number, time:number,unit:Time_unit) {
 
     }
     /**Performs final extension of the contents of the given container in a thermocycler. */
-    //% block="elongate the temperature of $container at $temp_ext during $time_ext;halt reaction at $temp_halt during $time_halt;hold at $temp_hold until removed from machine"
+    //% block="termination of container $container: elongate at $temp_ext during $time_ext $unit1;||halt reaction at $temp_halt during $time_halt $unit2;hold at $temp_hold °C until removed from machine"
     //% group="Temperature & storage"
     //%color="#02598B"
     //% inlineInputMode=inline
-    export function pcr_final_ext(container:Container,temp_ext:number,time_ext:number,temp_halt:number,time_halt:number,temp_hold:number) {
+    //% weight=92
+    export function pcr_final_ext(container:string,temp_ext:number,time_ext:number,unit1:Time_unit,temp_halt:number,time_halt:number,unit2:Time_unit,temp_hold:number) {
 
     }
     /**Inoculates a medium in the given container with a specified solid colony of culture and performs incubation at the given temperature for the specified duration on a rotary incubator. */
-    //% block="use sample $sample for inoculating medium $medium, then incubate at temperature $temp during $time, shaking $shaking (yes or no)"
+    //% block="inoculate container $container with solid $sample1 and incubate ($choice shaking) for $time $unit at $temp °C "
     //% group="Temperature & storage"
     //%color="#02598B"
     //% inlineInputMode=inline
-    export function inoculation(sample: string,medium:string,temp:number,time:number,shaing:string) {
+    //% weight=91
+    export function inoculation(container:string,sample1:string,choice:Choice,time:number,unit:Time_unit,temp:number) {
+
+    }
+    /**Inoculates a medium in the given container with a specified solid colony of culture and performs incubation at the given temperature for the specified duration on a rotary incubator. */
+    //% block="inoculate container $container with solid $sample1 and incubate ($choice shaking) ||for $time $unit at $temp °C (optional:Calibrate the spectrophotometer and make sure that the cell density of the culture has reached $cell_d X 10^6 cells/ml before continuing)"
+    //% group="Temperature & storage"
+    //%color="#02598B"
+    //% inlineInputMode=inline
+    //% weight=91
+    export function inoculation_op(container:string,sample1:string,choice:Choice,time:number,unit:Time_unit,temp:number, cell_d:number) {
 
     }
     /**Incubates the given plate at the specified temperature for the specified duration of time. */
-    //% block="incubate plate $plate at temperature $temp during $time"
+    //% block="incubate plate $plate at $temp °C during $time $unit"
     //% group="Temperature & storage"
     //%color="#02598B"
-    export function incubate_plate(plate: string,temp:number,time:number) {
+    //% inlineInputMode=inline
+    //% weight=90
+    export function incubate_plate(plate: string,temp:number,time:number,unit:Time_unit) {
 
     }
     /**Inverts the container containing a pellet to dry it. */
-    //% block="dry the contents of $container at temperature $temp"
+    //% block="stand the container $container for $time $unit in an inverted position ||on a paper towel to allow all of the fluid to drain away then dry at $temp °C"
     //% group="Temperature & storage"
     //%color="#02598B"
-    export function invert_dry(container:Container,temp:number) {
+    //% inlineInputMode=inline
+    //% weight=89
+    export function invert_dry(container:string,time:number,unit:Time_unit,temp:number) {
 
     }
     /**Dries the contents(pellet) of the specified container with specified conditions and time. */
-    //% block="dry $container at condition $dry_type during $time"
+    //% block="dry pellet $pellet $dry_type at most $time $unit"
     //% group="Temperature & storage"
     //%color="#02598B"
-    export function dry_pellet(container:Container, dry_type:Drying,time:number) {
+    //% inlineInputMode=inline
+    //% weight=88
+    export function dry_pellet(pellet:string, dry_type:Drying,time:number,unit:Time_unit) {
 
     }
     /**Dries the specified slide in air. */
-    //% block="dry slide $slide in air"
+    //% block="dry slide $slide"
     //% group="Temperature & storage"
     //%color="#02598B"
+    //% weight=87
     export function dry_slide(slide:string) {
 
     }
