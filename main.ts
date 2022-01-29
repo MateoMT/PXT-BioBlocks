@@ -672,7 +672,7 @@ namespace BioBlocks {
     //% group="Combination & mixing"
     //% color="#0033FF"
     //% weight=92
-    export function vortex(container:Container,time:number,unit:Time_unit) {
+    export function vortex(container:string,time:number,unit:Time_unit) {
 
     }
     //% block="vortex column $column gently"
