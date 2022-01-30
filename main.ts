@@ -512,35 +512,36 @@ namespace BioBlocks {
     }
 
 
-    //% block="new fluid:$volume $unit $name at $temperature °C(the state $state)"
+    //% block="new fluid $fluid:$volume $unit $name at $temperature °C(the state $state)"
     //% group="Declaration of resources"
     //% color="#9170FC"
     //% inlineInputMode=inline
     //% weight=100
-    export function new_fluid( volume: number,unit:Vol_unit, name: string,temperature: number,state: string) {
+    export function new_fluid( fluid:string,volume: number,unit:Vol_unit, name: string,temperature: number,state: string) {
 
     }
-     //% block="new solid $name at $temperature °C(the state  $state)"
+     //% block="new solid $solid: $name at $temperature °C(the state  $state)"
     //% group="Declaration of resources"
     //% color="#9170FC"
     //% inlineInputMode=inline
     //% weight=99
-    export function new_solid(name: string,  temperature: number,state: string) {
+    export function new_solid(solid:string,name: string, temperature: number,state: string) {
 
     }
    
-    //% block="new $type1 container $name and $fluid as contents"
+    //% block="new $type1 container $container:  $name and $fluid as contents"
     //% group="Declaration of resources"
     //% color="#9170FC"
+    //% inlineInputMode=inline
     //% weight=98
-    export function new_container(type1:Container_type, name:string,fluid: string) {
+    export function new_container(type1:Container_type, container:string,name:string,fluid: string) {
 
     }
-    //% block="new plate $name (the state $state)"
+    //% block="new plate $plate: $name (the state $state)"
     //% group="Declaration of resources"
     //% color="#9170FC"
     //% weight=97
-    export function new_plate(name: string, state:string) {
+    export function new_plate(plate:string,name: string, state:string) {
 
     }
     //% block="new slide $name"
