@@ -202,7 +202,7 @@ enum Time_constraint_type{
 
 
 
-//% weight=100 color=#FF5733 icon="\uf021"
+//% weight=200 color=#FF5733 icon="\f0c3"
 //% groups="['Book-keeping instructions', 'Timing','Symbolic manipulation','Disposal','Declaration of resources','Measurement','Combination & mixing','Temperature & storage','Centrifugation','Detection and analysis']"
 namespace BioBlocks {
     //% block="%protocol=variables_get(protocol_name)"
