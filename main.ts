@@ -240,6 +240,41 @@ namespace BioBlocks {
     export function new_a_plate(name:string):string{
         return name;
     } 
+    //% block="%fluid=variables_get(fluid_name)"
+    //% group="Definition"
+    //% color='#C1B504'
+    //% weight=195
+    export function fluid(fluid:string):string{
+    return fluid;
+    } 
+    //% block="%solid=variables_get(solid_name)"
+    //% group="Definition"
+    //% color='#C1B504'
+    //% weight=194
+    export function solid(solid:string):string{
+    return solid;
+    } 
+    //% block="%slide=variables_get(slide_name)"
+    //% group="Definition"
+    //% color='#C1B504'
+    //% weight=193
+    export function slide(slide:string):string{
+    return slide;
+    } 
+    //% block="%symbol1=variables_get(symbol_name)"
+    //% group="Definition"
+    //% color='#C1B504'
+    //% weight=192
+    export function symbol1(symbol1:string):string{
+    return symbol1;
+    } 
+    //% block="%column=variables_get(column_name)"
+    //% group="Definition"
+    //% color='#C1B504'
+    //% weight=191
+    export function column(column:string):string{
+    return column;
+    } 
 
 
 
