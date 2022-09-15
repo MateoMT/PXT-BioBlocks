@@ -207,70 +207,70 @@ enum Time_constraint_type{
 //% groups="['Book-keeping instructions', 'Timing','Symbolic manipulation','Disposal','Declaration of resources','Measurement','Combination & mixing','Temperature & storage','Centrifugation','Detection and analysis']"
 namespace BioBlocks {
     //% block="%protocol=variables_get(protocol_name)"
-    //% group="Definition"
+    //% group="Variables"
     //% color='#C1B504'
     //% weight=200
     export function protocol(protocol:string):string{
         return protocol;
     } 
-    //% block="%step=variables_get(step 1:name)"
-    //% group="Definition"
+    //% block="%step=variables_get(step:name)"
+    //% group="Variables"
     //% color='#C1B504'
     //% weight=199
     export function step(step:string):string{
         return step;
     } 
     //% block="%container=variables_get(container_name)"
-    //% group="Definition"
+    //% group="Variables"
     //% color='#C1B504'
     //% weight=198
     export function container(container:string):string{
         return container;
     } 
     //% block="%name=variables_get(new a name)"
-    //% group="Definition"
+    //% group="Variables"
     //% color='#C1B504'
     //% weight=197
     export function new_name(name:string):string{
         return name;
     } 
     //% block="%name=variables_get(plate_name)"
-    //% group="Definition"
+    //% group="Variables"
     //% color='#C1B504'
     //% weight=196
     export function new_a_plate(name:string):string{
         return name;
     } 
     //% block="%fluid=variables_get(fluid_name)"
-    //% group="Definition"
+    //% group="Variables"
     //% color='#C1B504'
     //% weight=195
     export function fluid(fluid:string):string{
     return fluid;
     } 
     //% block="%solid=variables_get(solid_name)"
-    //% group="Definition"
+    //% group="Variables"
     //% color='#C1B504'
     //% weight=194
     export function solid(solid:string):string{
     return solid;
     } 
     //% block="%slide=variables_get(slide_name)"
-    //% group="Definition"
+    //% group="Variables"
     //% color='#C1B504'
     //% weight=193
     export function slide(slide:string):string{
     return slide;
     } 
     //% block="%symbol1=variables_get(symbol_name)"
-    //% group="Definition"
+    //% group="Variables"
     //% color='#C1B504'
     //% weight=192
     export function symbol1(symbol1:string):string{
     return symbol1;
     } 
     //% block="%column=variables_get(column_name)"
-    //% group="Definition"
+    //% group="Variables"
     //% color='#C1B504'
     //% weight=191
     export function column(column:string):string{
