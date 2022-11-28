@@ -521,7 +521,7 @@ namespace BioBlocks {
     export function new_fluid( fluid:string,volume: number,unit:Vol_unit, name: string,temperature: number,state: string) {
 
     }
-     //% block="new :$volume $unit $name at $temperature °C(the state $state)"
+     //% block="new fluid:$volume $unit $name at $temperature °C(the state $state)"
     //% group="Declaration of resources"
     //% color="#9170FC"
     //% inlineInputMode=inline
