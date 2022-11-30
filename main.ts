@@ -518,7 +518,7 @@ namespace BioBlocks {
     //% color="#9170FC"
     //% inlineInputMode=inline
     //% weight=100
-    export function new_fluid( volume: number,unit:Vol_unit, name: string,temperature: number,state: string) {
+    export function new_fluid(volume: number,unit:Vol_unit, name: string,temperature: number,state: string) {
 
     }
      //% block="new solid: $name at $temperature °C(the state  $state)"
@@ -530,7 +530,7 @@ namespace BioBlocks {
 
     }
    
-    //% block="new $type1 container :  $name and $fluid as contents"
+    //% block="new $type1 container:  $name and $fluid as contents"
     //% group="Declaration of resources"
     //% color="#9170FC"
     //% inlineInputMode=inline
