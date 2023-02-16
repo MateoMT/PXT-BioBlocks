@@ -476,7 +476,7 @@ namespace BioBlocks {
     //% group="Symbolic manipulation"
     //% color="#009c6a"
     //% weight=96
-    export function divede(symbol1:string,volume1: number, volume2:string) {
+    export function divide(symbol1:string,volume1: number, volume2:string) {
 
     }
     //% block="symbol $symbol1 's value is assigned the value $volume1 - $volume2"
